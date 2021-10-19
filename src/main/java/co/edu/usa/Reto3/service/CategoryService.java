@@ -1,6 +1,5 @@
 package co.edu.usa.Reto3.service;
 
-import co.edu.usa.Reto3.model.Admin;
 import co.edu.usa.Reto3.model.Category;
 import co.edu.usa.Reto3.repository.CategoryRepository;
 import org.springframework.stereotype.Service;
@@ -21,19 +20,8 @@ public class CategoryService {
         return categoryRepository.save(category);
     }
 
-    public List<Map<String, Object>> getAll() {
-        List<Map<String, Object>> list = new ArrayList<>();
-        for (Category category : categoryRepository.findAll()) {
-            Map<String, Object> c = new LinkedHashMap<>();
-            c.put("id", category.getId());
-            c.put("name", category.getName());
-            c.put("description", category.getDescription());
-            c.put("quadbikes", category.getQuadbikes());
-
-            list.add(c);
-        }
-
-        return list;
+    public List<Category> getAll() {
+        return categoryRepository.findAll();
     }
 
     public Category findById(Long id) {

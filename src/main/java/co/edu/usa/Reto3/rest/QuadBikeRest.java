@@ -6,7 +6,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/Quadbike/")
@@ -20,7 +19,7 @@ public class QuadBikeRest {
 
     @GetMapping("all")
     @ResponseStatus(HttpStatus.OK)
-    private List<Map<String, Object>> listQuadBike() {
+    private List<Quadbike> listQuadBike() {
         return quadBikeService.getAll();
     }
 

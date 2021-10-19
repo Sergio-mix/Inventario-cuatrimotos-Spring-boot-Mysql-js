@@ -3,11 +3,9 @@ package co.edu.usa.Reto3.rest;
 import co.edu.usa.Reto3.model.Client;
 import co.edu.usa.Reto3.service.ClientService;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/Client/")
@@ -21,7 +19,7 @@ public class ClientRest {
 
     @GetMapping("all")
     @ResponseStatus(HttpStatus.OK)
-    private List<Map<String, Object>> listClient() {
+    private List<Client> listClient() {
         return clientService.getAll();
     }
 

@@ -35,8 +35,8 @@ public class Category implements Serializable {
     private String description;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "category")
-    @JsonIgnoreProperties("category")
     @ToString.Exclude
+    @JsonIgnoreProperties(value = {"messages", "reservations", "category"})
     private List<Quadbike> quadbikes;
 
     public Category() {

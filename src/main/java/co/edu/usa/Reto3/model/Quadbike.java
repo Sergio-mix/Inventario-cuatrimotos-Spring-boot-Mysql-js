@@ -10,6 +10,7 @@ import org.springframework.lang.NonNull;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 
@@ -29,6 +30,10 @@ public class Quadbike implements Serializable {
     private Long id;
 
     @NonNull
+    @Column(name = "name", nullable = false, length = 45)
+    private String name;
+
+    @NonNull
     @Column(name = "brand", nullable = false, length = 45)
     private String brand;
 
@@ -37,18 +42,24 @@ public class Quadbike implements Serializable {
     private Integer year;
 
     @NonNull
-    @ManyToOne
-    @JoinColumn(name = "id")
-    @JsonIgnoreProperties(value = "category")
-    private Category category;
-
-    @NonNull
-    @Column(name = "name", nullable = false, length = 45)
-    private String name;
-
-    @NonNull
     @Column(name = "description", nullable = false, length = 250)
     private String description;
+
+    @NonNull
+    @ManyToOne
+    @JoinColumn(name = "id")
+    @JsonIgnoreProperties(value = "quadbikes")
+    private Category category;
+
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "quadbike")
+    @JsonIgnoreProperties(value = {"quadbike", "client"})
+    @ToString.Exclude
+    private List<Message> messages;
+
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "quadbike")
+    @JsonIgnoreProperties(value = {"quadbike"})
+    @ToString.Exclude
+    private List<Reservation> reservations;
 
 
     public Quadbike() {

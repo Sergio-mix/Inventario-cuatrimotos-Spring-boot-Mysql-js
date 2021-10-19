@@ -35,21 +35,19 @@ public class Reservation implements Serializable {
     @Column(name = "status")
     private String status;
 
-    @NonNull
-    @OneToOne
-    @JoinColumn(name = "idScord")
-    @JsonIgnoreProperties(value = "score")
-    private Score score;
+    @ManyToOne
+    @JoinColumn(name = "idQuadbike")
+    @JsonIgnoreProperties(value = {"reservations","client"})
+    private Quadbike quadbike;
 
     @ManyToOne
     @JoinColumn(name = "idClient")
-    @JsonIgnoreProperties({"messages","reservations"})
+    @JsonIgnoreProperties(value = {"messages", "reservations"})
     private Client client;
 
-    @ManyToOne
-    @JoinColumn(name = "idQuadbike")
-    @JsonIgnoreProperties({"messages","reservations"})
-    private Quadbike quadbike;
+    @Column(name = "score")
+    private String score;
+
 
     public Reservation() {
 

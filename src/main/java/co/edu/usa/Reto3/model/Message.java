@@ -28,18 +28,15 @@ public class Message implements Serializable {
     @Column(name = "messageText", nullable = false, length = 250)
     private String messageText;
 
-    @NonNull
     @ManyToOne
     @JoinColumn(name = "idQuadbike")
     @JsonIgnoreProperties({"messages","reservations"})
     private Quadbike quadbike;
 
-    @NonNull
-    @ManyToOne()
+    @ManyToOne
     @JoinColumn(name = "idClient")
     @JsonIgnoreProperties({"messages","reservations"})
     private Client client;
-
 
     public Message() {
 
