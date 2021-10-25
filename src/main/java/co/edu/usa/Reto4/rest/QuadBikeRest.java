@@ -38,13 +38,13 @@ public class QuadBikeRest {
     }
 
     @DeleteMapping("{id}")
-    @ResponseStatus(value = HttpStatus.OK)
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
     private void removeQuadbike(@PathVariable("id") Long id) {
         quadBikeService.remove(id);
     }
 
     @PutMapping(value = "update")
-    @ResponseStatus(value = HttpStatus.OK)
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
     private void updateQuadbike(@RequestBody Quadbike quadbike) {
         quadBikeService.update(quadbike);
     }

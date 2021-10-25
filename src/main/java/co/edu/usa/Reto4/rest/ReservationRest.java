@@ -38,13 +38,13 @@ public class ReservationRest {
     }
 
     @DeleteMapping("{id}")
-    @ResponseStatus(value = HttpStatus.OK)
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
     private void removeReservation(@PathVariable("id") Long id) {
         reservationService.remove(id);
     }
 
     @PutMapping(value = "update")
-    @ResponseStatus(value = HttpStatus.OK)
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
     private void updateReservation(@Valid @RequestBody Reservation reservation) {
         reservationService.update(reservation);
     }

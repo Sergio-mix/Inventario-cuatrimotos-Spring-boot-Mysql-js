@@ -37,13 +37,13 @@ public class AdminRest {
     }
 
     @DeleteMapping("{id}")
-    @ResponseStatus(value = HttpStatus.OK)
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
     private void removeAdmin(@PathVariable("id") Long id) {
         adminService.remove(id);
     }
 
     @PutMapping(value = "update")
-    @ResponseStatus(value = HttpStatus.OK)
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
     private void updateAdmin(@RequestBody Admin admin) {
         adminService.update(admin);
     }

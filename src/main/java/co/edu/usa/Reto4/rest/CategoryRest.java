@@ -39,13 +39,13 @@ public class CategoryRest {
     }
 
     @DeleteMapping("{id}")
-    @ResponseStatus(value = HttpStatus.OK)
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
     private void removeCategory(@PathVariable("id") Long id) {
         categoryService.remove(id);
     }
 
     @PutMapping(value = "update")
-    @ResponseStatus(value = HttpStatus.OK)
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
     private void updateCategory(@RequestBody Category category) {
         categoryService.update(category);
     }

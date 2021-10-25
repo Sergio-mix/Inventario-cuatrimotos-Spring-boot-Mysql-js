@@ -38,13 +38,13 @@ public class ClientRest {
     }
 
     @DeleteMapping("{id}")
-    @ResponseStatus(value = HttpStatus.OK)
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
     private void removeClient(@PathVariable("id") Long id) {
         clientService.remove(id);
     }
 
     @PutMapping(value = "update")
-    @ResponseStatus(value = HttpStatus.OK)
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
     private void updateClient(@RequestBody Client client) {
         clientService.update(client);
     }

@@ -37,13 +37,13 @@ public class MessageRest {
     }
 
     @DeleteMapping("{id}")
-    @ResponseStatus(value = HttpStatus.OK)
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
     private void removeMessage(@PathVariable("id") Long id) {
         messageService.remove(id);
     }
 
     @PutMapping(value = "update")
-    @ResponseStatus(value = HttpStatus.OK)
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
     private void updateMessage(@RequestBody Message message) {
         messageService.update(message);
     }
