@@ -4,7 +4,7 @@
     <persistence-units>
       <persistence-unit name="Default">
         <packages>
-          <package value="co.edu.usa.Reto3" />
+          <package value="co.edu.usa.Reto4" />
         </packages>
       </persistence-unit>
     </persistence-units>
