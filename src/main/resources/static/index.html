@@ -1,49 +1,250 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>Demo Login</title>
-    <meta name="description" content=""/>
-    <meta name="viewport" content="width=device-width"/>
-    <base href="/"/>
-    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
-    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/manager.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
+    <meta name="author" content="Creative Tim">
+    <title>Inventario Cuatrimotos</title>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/img/brand/favicon.png" type="image/png">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+    <!-- Icons -->
+    <link rel="stylesheet" href="assets/vendor/nucleo/css/nucleo.css" type="text/css">
+    <link rel="stylesheet" href="assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+    <!-- Page plugins -->
+    <!-- Argon CSS -->
+    <link rel="stylesheet" href="assets/css/argon.css?v=1.2.0" type="text/css">
 </head>
+
 <body>
-<h1>Login GitHub</h1>
-<div class="container unauthenticated">
-    Para iniciar sesión con Github:
-    <a href="/oauth2/authorization/github">haz click</a>
-</div>
-<div class="container authenticated" style="display:none">
-    Autenticado como: <span id="user"></span>
-    <p>
-        <a href="privado.html">Ir a la pagina privada</a>
-    </p>
-    <div>
-        <button onClick="logout()" class="btn btn-primary">Logout</button>
+<!-- Sidenav -->
+<nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+    <div class="scrollbar-inner">
+        <!-- Brand -->
+        <div class="sidenav-header  align-items-center">
+            <a class="navbar-brand" href="javascript:void(0)">
+                <h1 class="nav-link active">Sistema</h1>
+            </a>
+        </div>
+        <div class="navbar-inner">
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+                <!-- Nav items -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="ni ni-tv-2 text-primary"></i>
+                            <span class="nav-link-text">Tables</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- Main content -->
+<div class="main-content" id="panel">
+    <!-- Topnav -->
+    <div class="header bg-primary pb-6">
+        <div class="container-fluid">
+            <div class="header-body">
+                <div class="row align-items-center py-4">
+                    <div class="col-lg-6 col-7">
+                        <h6 class="h2 text-white d-inline-block mb-0">Tables</h6>
+                        <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="#">Tables</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Tables</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-lg-6 col-5 text-right">
+                        <a href="html/login/login.html" class="btn btn-sm btn-neutral" style="color: #bd2130">Salir</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page content -->
+    <div class="container-fluid mt--6">
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <!-- Card header -->
+                    <div class="card-header border-0" style="display: flex">
+                        <h3 class="mb-0">Tabla de Categorias</h3>
+                        <div>
+                            <div class="col-lg-6 col-5 text-right">
+                                <a href="html/register/registerCategory.html" class="btn btn-sm btn-neutral">Agregar_Categoria</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Light table -->
+                    <div class="table-responsive">
+                        <table id="dataTableCategoria" class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                            <tr>
+                                <th scope="col" class="sort" data-sort="budget">NOMBRE</th>
+                                <th scope="col" class="sort" data-sort="status">DESCRIOPCIÓN</th>
+                                <th scope="col" class="sort" data-sort="status">lista</th>
+                                <th scope="col" class="sort" data-sort="status">#</th>
+                            </tr>
+                            </thead>
+                            <tbody class="list">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card">
+                    <!-- Card header -->
+                    <div class="card-header border-0" style="display: flex">
+                        <h3 class="mb-0">Tabla de Cuatrimotos</h3>
+                        <div>
+                            <div class="col-lg-6 col-5 text-right">
+                                <a href="html/register/registerCuatrimoto.html" class="btn btn-sm btn-neutral">Agregar_Cuatrimoto</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Light table -->
+                    <div class="table-responsive">
+                        <table id="dataTableCuatrimoto" class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                            <tr>
+                                <th scope="col" class="sort" data-sort="budget">MARCA</th>
+                                <th scope="col" class="sort" data-sort="status">MODELO</th>
+                                <th scope="col" class="sort" data-sort="status">CATEGORIA</th>
+                                <th scope="col" class="sort" data-sort="status">Nombre</th>
+                                <th scope="col" class="sort" data-sort="status">#</th>
+                            </tr>
+                            </thead>
+                            <tbody class="list">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card">
+                    <!-- Card header -->
+                    <div class="card-header border-0" style="display: flex">
+                        <h3 class="mb-0">Tabla de Clientes</h3>
+                        <div>
+                            <div class="col-lg-6 col-5 text-right">
+                                <a href="html/register/registerCliente.html" class="btn btn-sm btn-neutral">Agregar_Cliente</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Light table -->
+                    <div class="table-responsive">
+                        <table id="dataTableCliente" class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                            <tr>
+                                <th scope="col" class="sort" data-sort="budget">NOMBRE</th>
+                                <th scope="col" class="sort" data-sort="status">EMAIL</th>
+                                <th scope="col" class="sort" data-sort="status">AGE</th>
+                                <th scope="col" class="sort" data-sort="status">#</th>
+                            </tr>
+                            </thead>
+                            <tbody class="list">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card">
+                    <!-- Card header -->
+                    <div class="card-header border-0" style="display: flex">
+                        <h3 class="mb-0">Tabla de Mensajes</h3>
+                    </div>
+                    <!-- Light table -->
+                    <div class="table-responsive">
+                        <table id="dataTableMensaje" class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                            <tr>
+                                <th scope="col" class="sort" data-sort="budget">MENSSAGETEXT</th>
+                                <th scope="col" class="sort" data-sort="status">#</th>
+                            </tr>
+                            </thead>
+                            <tbody class="list">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card">
+                    <!-- Card header -->
+                    <div class="card-header border-0" style="display: flex">
+                        <h3 class="mb-0">Tabla de Reservaciones</h3>
+                    </div>
+                    <!-- Light table -->
+                    <div class="table-responsive">
+                        <table id="dataTableReservacion" class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                            <tr>
+                                <th scope="col" class="sort" data-sort="budget">ID</th>
+                                <th scope="col" class="sort" data-sort="status">ID_CLIENT</th>
+                                <th scope="col" class="sort" data-sort="status">NAME_CLIENT</th>
+                                <th scope="col" class="sort" data-sort="status">EMAIL_CLIENT</th>
+                                <th scope="col" class="sort" data-sort="status">SCOR</th>
+                                <th scope="col" class="sort" data-sort="status">#</th>
+                            </tr>
+                            </thead>
+                            <tbody class="list">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card">
+                    <!-- Card header -->
+                    <div class="card-header border-0" style="display: flex">
+                        <h3 class="mb-0">Tabla de Administradores</h3>
+                        <div>
+                            <div class="col-lg-6 col-5 text-right">
+                                <a href="html/register/registerAdmin.html" class="btn btn-sm btn-neutral">Agregar_Administrador</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Light table -->
+                    <div class="table-responsive">
+                        <table id="dataTableAdmin" class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                            <tr>
+                                <th scope="col" class="sort" data-sort="budget">ID</th>
+                                <th scope="col" class="sort" data-sort="status">NAME</th>
+                                <th scope="col" class="sort" data-sort="status">EMAIL</th>
+                                <th scope="col" class="sort" data-sort="status">#</th>
+                            </tr>
+                            </thead>
+                            <tbody class="list">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+<!-- Argon Scripts -->
+<!-- Core -->
+<script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/js-cookie/js.cookie.js"></script>
+<script src="assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+<script src="assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+<script src="assets/js/table/tablaCategoria.js"></script>
+<script src="assets/js/table/tablaCuatrimoto.js"></script>
+<script src="assets/js/table/tablaCliente.js"></script>
+<script src="assets/js/table/tablaMensaje.js"></script>
+<script src="assets/js/table/tablaReservacion.js"></script>
+<script src="assets/js/table/tablaAdmin.js"></script>
+<script src="assets/js/main.js"></script>
+
+<!-- Argon JS -->
+<script src="assets/js/argon.js?v=1.2.0"></script>
 </body>
-<script type="text/javascript">
-    $.get("/user", function (data) {
-        $("#user").html(data.name);
-        $(".unauthenticated").hide()
-        $(".authenticated").show()
 
-        localStorage.setItem('session', data.name);
-    });
-
-
-    var logout = function () {
-        $.post("/logout", function () {
-            $("#user").html('');
-            $(".unauthenticated").show();
-            $(".authenticated").hide();
-        })
-        return true;
-    }
-</script>
 </html>
