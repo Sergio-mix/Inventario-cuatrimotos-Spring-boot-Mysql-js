@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/Admin/")
-//@CrossOrigin
+@CrossOrigin
 public class AdminRest {
     private final AdminService adminService;
 

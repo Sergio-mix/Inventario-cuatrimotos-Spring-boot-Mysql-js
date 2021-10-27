@@ -10,7 +10,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/Category/")
-//@CrossOrigin
+@CrossOrigin
 public class CategoryRest {
 
     private final CategoryService categoryService;

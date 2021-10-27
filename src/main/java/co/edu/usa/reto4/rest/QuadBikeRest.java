@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/Quadbike/")
-//@CrossOrigin
+@CrossOrigin
 public class QuadBikeRest {
 
     private final QuadBikeService quadBikeService;
