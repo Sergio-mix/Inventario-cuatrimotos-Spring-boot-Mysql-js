@@ -14,10 +14,17 @@ async function llenarTabla() {
 
     let listHtml = '';
     for (let cuatrimoto of cuatrimotos) {
+        let category = cuatrimoto.category;
+
+        if (category === null) {
+            category = 'No asignado';
+        }else {
+            category = cuatrimoto.category.name;
+        }
         let fila =
             "<tr></tr><td> " + cuatrimoto.brand + "</td>" +
             "<td>" + cuatrimoto.year + "</td>" +
-            "<td> " + cuatrimoto.category.name + " </td>" +
+            "<td> " + category + " </td>" +
             "<td> " + cuatrimoto.name + " </td>" +
             "<td><button style=\"color: #6e51cb\" class=\"btn btn-sm btn-neutral\" onclick='verCuatrimoto(" + cuatrimoto.id + ")'>Info</button>" +
             "<button style=\"color: #ffd025\" class=\"btn btn-sm btn-neutral\" onclick='actualizarCuatrimoto(" + cuatrimoto.id + ")'>Actualizar</button>" +

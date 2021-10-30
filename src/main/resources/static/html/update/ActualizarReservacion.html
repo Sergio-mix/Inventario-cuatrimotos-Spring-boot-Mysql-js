@@ -42,23 +42,37 @@
                     <form role="form">
                         <div class="form-group">
                             <div class="input-group input-group-merge input-group-alternative mb-3">
-                                <input id="txtFechaDeInicio" class="form-control" placeholder="fecha de inicio"
-                                       type="date">
+                                <label for="txtFechaDeInicio" class="my-xl-auto textPadding">Inicio</label><input
+                                    id="txtFechaDeInicio" class="form-control text-center"
+                                    placeholder="fecha de inicio"
+                                    type="date">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-group input-group-merge input-group-alternative mb-3">
-                                <input id="txtFechaFinal" class="form-control" placeholder="fecha final " type="date">
+                                <label for="txtFechaFinal" class="my-xl-auto textPadding">Fin</label><input
+                                    id="txtFechaFinal" class="form-control text-center" placeholder="fecha final " type="date">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-group input-group-merge input-group-alternative">
-                                <select id="txtScore" class="form-control">
-                                    <option value="null">null</option>
-                                    <option value="Buena">Buena</option>
-                                    <option value="Regular">Regular</option>
-                                    <option value="Mala">Mala</option>
-                                </select>
+                                <label for="txtScore" class="my-xl-auto textPadding">Puntaje</label><select
+                                    id="txtScore" class="form-control text-center">
+                                <option value="null">No asignado</option>
+                                <option value="Buena">Buena</option>
+                                <option value="Regular">Regular</option>
+                                <option value="Mala">Mala</option>
+                            </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group input-group-merge input-group-alternative">
+                                <label for="txtStatus" class="my-xl-auto textPadding">Estado</label><select
+                                    id="txtStatus" class="form-control text-center">
+                                <option value="null">No asignado</option>
+                                <option value="completed">completed</option>
+                                <option value="cancelled">cancelled</option>
+                            </select>
                             </div>
                         </div>
                         <div class="text-center">

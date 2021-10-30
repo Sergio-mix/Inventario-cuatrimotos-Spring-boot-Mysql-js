@@ -13,12 +13,17 @@ async function llenarTabla() {
 
     let listHtml = '';
     for (let reservation of reservations) {
+        let score = reservation.score;
+
+        if (score === null) {
+            score = 'No asignado';
+        }
         let fila =
             "<tr><td> " + reservation.idReservation + "</td>" +
             "<td>" + reservation.client.idClient + "</td>" +
             "<td> " + reservation.client.name + " </td>" +
             "<td> " + reservation.client.email + " </td>" +
-            "<td> " + reservation.score + " </td>" +
+            "<td> " + score + " </td>" +
             "<td> <button style=\"color: #ffd025\" class=\"btn btn-sm btn-neutral\" onclick='actualizarReservacion(" + reservation.idReservation + ")'>Actualizar</button>" +
             "<button style=\"color: #dc4d5c\" class=\"btn btn-sm btn-neutral\" " +
             "onclick='eliminarReservacion(" + reservation.idReservation + ",this" + ")'>Eliminar</button>" +

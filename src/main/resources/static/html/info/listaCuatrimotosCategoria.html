@@ -1,88 +1,129 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <script src="../../assets/js/manager.js"></script>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
-  <meta name="author" content="Creative Tim">
-  <title>Lista de cuatrimotos</title>
-  <!-- Favicon -->
-  <link rel="icon" href="../../assets/img/brand/favicon.png" type="image/png">
-  <!-- Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
-  <!-- Icons -->
-  <link rel="stylesheet" href="../../assets/vendor/nucleo/css/nucleo.css" type="text/css">
-  <link rel="stylesheet" href="../../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
-  <!-- Argon CSS -->
-  <link rel="stylesheet" href="../../assets/css/argon.css?v=1.2.0" type="text/css">
+    <script src="../../assets/js/manager.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
+    <meta name="author" content="Creative Tim">
+    <title>Lista de cuatrimotos</title>
+    <!-- Favicon -->
+    <link rel="icon" href="../../assets/img/brand/favicon.png" type="image/png">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+    <!-- Icons -->
+    <link rel="stylesheet" href="../../assets/vendor/nucleo/css/nucleo.css" type="text/css">
+    <link rel="stylesheet" href="../../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+    <!-- Argon CSS -->
+    <link rel="stylesheet" href="../../assets/css/argon.css?v=1.2.0" type="text/css">
 </head>
 <body>
 <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
-  <div class="scrollbar-inner">
-    <!-- Brand -->
-    <div class="sidenav-header  align-items-center">
-      <a class="navbar-brand" href="javascript:void(0)">
-        <h1 class="nav-link active">Sistema</h1>
-      </a>
-    </div>
-    <div class="navbar-inner">
-      <!-- Collapse -->
-      <div class="collapse navbar-collapse" id="sidenav-collapse-main">
-        <!-- Nav items -->
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="../../index.html">
-              <i class="ni ni-tv-2 text-primary"></i>
-              <span class="nav-link-text">Tables</span>
+    <div class="scrollbar-inner">
+        <!-- Brand -->
+        <div class="sidenav-header  align-items-center">
+            <a class="navbar-brand" href="javascript:void(0)">
+                <h1 class="nav-link active">Sistema</h1>
             </a>
-          </li>
-        </ul>
-      </div>
+        </div>
+        <div class="navbar-inner">
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+                <!-- Nav items -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../../index.html">
+                            <i class="ni ni-tv-2 text-primary"></i>
+                            <span class="nav-link-text">Tables</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="infoStatistics.html">
+                            <i class="ni ni-chart-bar-32"></i>
+                            <span class="nav-link-text">statistics info</span>
+                        </a>
+                    </li>
+                </ul>
+                <hr class="my-3">
+                <ul class="navbar-nav" onclick="salir()">
+                    <li class="nav-item">
+                        <a class="nav-link salir_a salir_b" href="../login/login.html">
+                            <i class="ni ni-bold-left"></i>
+                            <span class="nav-link-text">Salir</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-  </div>
 </nav>
 <div class="main-content" id="panel">
-  <div class="header pb-6 d-flex align-items-center"
-       style="min-height: 500px; background-image: url(../../assets/img/theme/fondo_3.jpg); background-size: cover; background-position: center top;">
-    <!-- Mask -->
-    <span class="mask bg-gradient-default opacity-8"></span>
-    <!-- Header container -->
-    <div class="container-fluid d-flex align-items-center">
-      <div class="row">
-        <div class="col-lg-7 col-md-10">
-          <h1 id="txt" class="display-2 text-white"></h1>
+    <nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav align-items-center  ml-md-auto ">
+                </ul>
+                <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                           aria-expanded="false">
+                            <div class="media align-items-center">
+                                <span class="avatar avatar-sm rounded-circle">
+                                    <img id="imageIcon" alt="Image placeholder" src="">
+                                </span>
+                                <div class="media-body  ml-2  d-none d-lg-block">
+                                    <span id="userName" class="mb-0 text-sm  font-weight-bold"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
+    </nav>
+    <div class="header pb-6 d-flex align-items-center"
+         style="min-height: 500px; background-image: url(../../assets/img/theme/fondo_3.jpg); background-size: cover; background-position: center top;">
+        <!-- Mask -->
+        <span class="mask bg-gradient-default opacity-8"></span>
+        <!-- Header container -->
+        <div class="container-fluid d-flex align-items-center">
+            <div class="row">
+                <div class="col-lg-7 col-md-10">
+                    <h1 id="txt" class="display-2 text-white"></h1>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-<div class="container-fluid mt--6">
-  <div class="row">
-    <div class="col">
-      <div class="card">
-        <!-- Card header -->
-        <div class="card-header border-0" style="display: flex">
-          <h3 class="mb-0">Tabla de cuatrimotos</h3>
+    <div class="container-fluid mt--6">
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <!-- Card header -->
+                    <div class="card-header border-0" style="display: flex">
+                        <h3 class="mb-0">Tabla de cuatrimotos</h3>
+                    </div>
+                    <!-- Light table -->
+                    <div class="table-responsive">
+                        <table id="dataTableCategoriaCuatrimoto" class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                            <tr>
+                                <th scope="col" class="sort" data-sort="budget">MARCA</th>
+                                <th scope="col" class="sort" data-sort="status">MODELO</th>
+                                <th scope="col" class="sort" data-sort="status">Nombre</th>
+                            </tr>
+                            </thead>
+                            <tbody class="list">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- Light table -->
-        <div class="table-responsive">
-          <table id="dataTableCategoriaCuatrimoto" class="table align-items-center table-flush">
-            <thead class="thead-light">
-            <tr>
-              <th scope="col" class="sort" data-sort="budget">MARCA</th>
-              <th scope="col" class="sort" data-sort="status">MODELO</th>
-              <th scope="col" class="sort" data-sort="status">Nombre</th>
-            </tr>
-            </thead>
-            <tbody class="list">
-            </tbody>
-          </table>
-        </div>
-      </div>
     </div>
-  </div>
 </div>
-</div>
+<script src="../../assets/js/user.js"></script>
 <script src="../../assets/vendor/jquery/dist/jquery.min.js"></script>
 <script src="../../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../../assets/vendor/js-cookie/js.cookie.js"></script>

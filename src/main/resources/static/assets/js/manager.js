@@ -1,9 +1,6 @@
 //const API = 'http://localhost:8080';
 const API = 'http://129.159.121.184:8080';
 
-//Session
-const Session = API + '/user';
-
 //Save
 const AdminSave = API + '/api/Admin/save';
 const CategorySave = API + '/api/Category/save';
@@ -43,10 +40,25 @@ const CategoryUpdate = API + '/api/Category/update';
 const ReservationUpdate = API + '/api/Reservation/update'
 const Admin = API + '/api/Admin/update';
 
-//Validation
-const CategoryValid = API + '/api/Category/name/'
+//InfoS
+const ReservationReport_dates = API + '/api/Reservation/report-dates/';
+const ReservationReport_status = API + '/api/Reservation/report-status';
+const ReservationReport_clients = API + '/api/Reservation/report-clients';
+
+//Login
+const User = API + '/user';
 
 function doOpen(url) {
     document.location.target = "_blank";
     document.location.href = url;
+}
+
+async function salir() {
+    await fetch(API + "/logout", {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    })
 }

@@ -35,9 +35,26 @@
                 <!-- Nav items -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link active" href="index.html">
                             <i class="ni ni-tv-2 text-primary"></i>
                             <span class="nav-link-text">Tables</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="html/info/infoStatistics.html">
+                            <i class="ni ni-chart-bar-32"></i>
+                            <span class="nav-link-text">statistics info</span>
+                        </a>
+                    </li>
+                </ul>
+                <hr class="my-3">
+                <ul class="navbar-nav" onclick="salir()">
+                    <li class="nav-item">
+                        <a class="nav-link salir_a salir_b" href="html/login/login.html">
+                            <i class="ni ni-bold-left"></i>
+                            <span class="nav-link-text">Salir</span>
                         </a>
                     </li>
                 </ul>
@@ -47,6 +64,29 @@
 </nav>
 <!-- Main content -->
 <div class="main-content" id="panel">
+    <nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav align-items-center  ml-md-auto ">
+                </ul>
+                <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                           aria-expanded="false">
+                            <div class="media align-items-center">
+                                <span class="avatar avatar-sm rounded-circle">
+                                    <img id="imageIcon" alt="Image placeholder" src="">
+                                </span>
+                                <div class="media-body  ml-2  d-none d-lg-block">
+                                    <span id="userName" class="mb-0 text-sm  font-weight-bold"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <!-- Topnav -->
     <div class="header bg-primary pb-6">
         <div class="container-fluid">
@@ -61,10 +101,6 @@
                                 <li class="breadcrumb-item active" aria-current="page">Tables</li>
                             </ol>
                         </nav>
-                    </div>
-                    <div class="col-lg-6 col-5 text-right">
-                        <a href="html/login/login.html" class="btn btn-sm btn-neutral" style="color: #bd2130"
-                           onclick="salir()">Salir</a>
                     </div>
                 </div>
             </div>
@@ -231,11 +267,13 @@
 </div>
 <!-- Argon Scripts -->
 <!-- Core -->
+
 <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
 <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/vendor/js-cookie/js.cookie.js"></script>
 <script src="assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
 <script src="assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+<script src="assets/js/user.js"></script>
 <script src="assets/js/table/tablaCategoria.js"></script>
 <script src="assets/js/table/tablaCuatrimoto.js"></script>
 <script src="assets/js/table/tablaCliente.js"></script>

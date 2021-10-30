@@ -8,6 +8,7 @@ async function obtener() {
     document.getElementById('txtFechaDeInicio').value = reserva.startDate.split('T', 1);
     document.getElementById('txtFechaFinal').value = reserva.devolutionDate.split('T', 1);
     document.getElementById('txtScore').value = reserva.score;
+    document.getElementById('txtStatus').value = reserva.status;
 
     return reserva;
 }
@@ -30,7 +31,16 @@ async function actualizarReserva() {
     let fechaInicio = document.getElementById('txtFechaDeInicio').value;
     let fechaFin = document.getElementById('txtFechaFinal').value;
     let score = document.getElementById('txtScore').value;
+    let status = document.getElementById('txtStatus').value;
 
+    if (score === 'null') {
+        score = null;
+    }
+
+    if (status === 'null') {
+        status = null;
+    }
+    
     if (fechaInicio !== "" && fechaFin !== "") {
         const reserva = await obtenerObjetoPorId(id);
 
@@ -54,6 +64,7 @@ async function actualizarReserva() {
                 devolutionDate: fechaFin,
                 client: client,
                 score: score,
+                status: status,
                 quadbike: quadbike
             })
         });
