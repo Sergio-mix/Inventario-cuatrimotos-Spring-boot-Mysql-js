@@ -10,6 +10,12 @@ function user() {
             }).then(res => res.json()).then(json => {
                 document.getElementById('imageIcon').src = json.image;
                 document.getElementById('userName').innerHTML = json.name;
+                if (json.name == null) {
+                    localStorage.clear();
+                    location.reload();
+                } else {
+                    localStorage.setItem('session', json.name);
+                }
             })
         );
     });

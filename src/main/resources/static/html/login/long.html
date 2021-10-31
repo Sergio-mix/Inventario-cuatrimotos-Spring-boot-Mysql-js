@@ -35,27 +35,7 @@
         </div>
     </div>
 </section>
+<script src="../../assets/js/manager.js"></script>
+<script src="../../assets/js/login/long.js"></script>
 </body>
-<script type="text/javascript">
-
-    $.get("/user", function (data) {
-        $("#user").html(data.name);
-        $(".unauthenticated").hide()
-        $(".authenticated").show()
-
-        localStorage.setItem('session', data.name);
-
-        if (data.name !== null) {
-            doOpen("long.html");
-        } else {
-            doOpen("../../index.html");
-        }
-    });
-
-
-    function doOpen(url) {
-        document.location.target = "_blank";
-        document.location.href = url;
-    }
-</script>
 </html>
