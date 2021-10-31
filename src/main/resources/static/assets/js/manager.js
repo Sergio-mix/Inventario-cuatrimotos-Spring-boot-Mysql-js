@@ -61,4 +61,6 @@ async function salir() {
             'Content-Type': 'application/json'
         }
     })
+
+    localStorage.clear();
 }
