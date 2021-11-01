@@ -38,7 +38,7 @@ async function llenarTabla() {
 
 async function actualizarReservacion(codigo) {
     sessionStorage.setItem('idActualizarReservacion', codigo)
-    doOpen("html/update/actualizarReservacion.html");
+    doOpen("html/update/ActualizarReservacion.html");
 }
 
 function eliminarReservacion(codigo, btn) {

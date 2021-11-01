@@ -8,12 +8,6 @@ $.get("/user", function (data) {
     if (data.name !== null) {
         doOpen("../../index.html");
     } else {
-        location.reload();
+        doOpen("../../html/login/login.html");
     }
 });
-
-
-function doOpen(url) {
-    document.location.target = "_blank";
-    document.location.href = url;
-}
