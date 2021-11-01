@@ -3,9 +3,8 @@ $.get("/user", function (data) {
     $(".unauthenticated").hide()
     $(".authenticated").show()
 
-    localStorage.setItem('session', data.name);
-
     if (data.name !== null) {
+        localStorage.setItem('session', data.name);
         doOpen("../../index.html");
     } else {
         doOpen("../../html/login/login.html");

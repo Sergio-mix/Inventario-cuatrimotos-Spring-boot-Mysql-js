@@ -11,12 +11,11 @@ function user() {
                 document.getElementById('imageIcon').src = json.image;
                 document.getElementById('userName').innerHTML = json.name;
 
-                if (json.name === null) {
-                    localStorage.clear();
-                    doOpen("../../html/login/login.html");
-                } else {
-                    localStorage.setItem('session', json.name);
-                    location.reload();
+                if (json.name !== null) {
+                    if (localStorage.getItem('session') === null) {
+                        localStorage.setItem('session', json.name);
+                        location.reload();
+                    }
                 }
             })
         );
